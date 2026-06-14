@@ -47,22 +47,27 @@ export function MobileMenu() {
 
       <AnimatePresence>
         {isOpen && (
-          <>
+          <motion.div
+            key="menu-wrapper"
+            className="fixed inset-0 z-40"
+          >
             <motion.div
+              key="backdrop"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               transition={{ duration: 0.2 }}
-              className="fixed inset-0 bg-background/80 backdrop-blur-sm z-40"
+              className="absolute inset-0 bg-background/80 backdrop-blur-sm"
               onClick={() => setIsOpen(false)}
             />
             
             <motion.div
+              key="drawer"
               initial={{ x: '100%' }}
               animate={{ x: 0 }}
               exit={{ x: '100%' }}
               transition={{ type: 'spring', damping: 25, stiffness: 200 }}
-              className="fixed top-0 right-0 h-full w-4/5 max-w-sm bg-background border-l border-border shadow-2xl z-50 flex flex-col"
+              className="absolute top-0 right-0 h-full w-4/5 max-w-sm bg-background border-l border-border shadow-2xl flex flex-col"
             >
               <div className="flex items-center justify-between p-4 border-b border-border">
                 <span className="font-bold text-lg">Menu</span>
@@ -116,7 +121,7 @@ export function MobileMenu() {
                 </div>
               </div>
             </motion.div>
-          </>
+          </motion.div>
         )}
       </AnimatePresence>
     </div>

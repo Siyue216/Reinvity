@@ -30,7 +30,7 @@ export function CtaSection() {
           </h2>
           
           <p className="text-xl md:text-2xl text-blue-100/90 max-w-2xl mx-auto font-light leading-relaxed">
-            Let's turn your vision into a product your customers will love. Partner with us for engineering excellence.
+            Let&apos;s turn your vision into a product your customers will love. Partner with us for engineering excellence.
           </p>
           
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-6">

@@ -1,9 +1,19 @@
+'use client';
+
 import * as React from 'react';
 import Link from 'next/link';
 import { Mail, Phone, ArrowRight } from 'lucide-react';
 
 export function Footer() {
   const currentYear = new Date().getFullYear();
+  const [email, setEmail] = React.useState('');
+
+  const handleNewsletterSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    // Placeholder: integrate with email service in production
+    console.log('Newsletter signup:', email);
+    setEmail('');
+  };
 
   return (
     <footer className="bg-surface-elevated border-t border-border pt-16 pb-8">
@@ -89,10 +99,13 @@ export function Footer() {
             
             <div className="pt-2">
               <h4 className="text-sm font-semibold text-foreground mb-3">Subscribe to our newsletter</h4>
-              <form className="flex gap-2">
+              <form onSubmit={handleNewsletterSubmit} className="flex gap-2">
                 <input 
                   type="email" 
+                  name="email"
                   placeholder="Enter your email" 
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
                   className="flex-1 bg-background border border-border rounded-md px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-primary/50"
                   required
                 />

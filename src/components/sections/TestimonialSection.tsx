@@ -1,6 +1,7 @@
 'use client';
 
 import * as React from 'react';
+import Image from 'next/image';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Star, ChevronLeft, ChevronRight } from 'lucide-react';
 
@@ -92,7 +93,7 @@ export function TestimonialSection() {
               Client Success Stories
             </h2>
             <p className="text-lg text-muted-foreground">
-              Don't just take our word for it. Here's what engineering leaders and founders have to say about partnering with Reinvity.
+              Don&apos;t just take our word for it. Here&apos;s what engineering leaders and founders have to say about partnering with Reinvity.
             </p>
           </div>
           
@@ -168,13 +169,15 @@ export function TestimonialSection() {
                       </div>
                       
                       <p className="text-foreground text-lg leading-relaxed mb-8 flex-grow font-medium">
-                        "{item.quote}"
+                        &ldquo;{item.quote}&rdquo;
                       </p>
                       
                       <div className="flex items-center gap-4 mt-auto">
-                        <img 
+                        <Image 
                           src={item.avatar} 
                           alt={item.name} 
+                          width={48}
+                          height={48}
                           className="w-12 h-12 rounded-full object-cover border border-border"
                         />
                         <div>

@@ -37,6 +37,7 @@ export function ContactForm() {
     description: '',
     budget: '' as ContactFormData['budget'],
     timeline: '' as ContactFormData['timeline'],
+    _gotcha: '',
   });
 
   const updateField = <K extends keyof ContactFormData>(field: K, value: ContactFormData[K]) => {
@@ -51,28 +52,20 @@ export function ContactForm() {
   };
 
   const validateStep = (stepNum: number): boolean => {
-    let schemaShape: Record<string, any>;
+    const step1Keys = ['inquiryType'] as const;
+    const step2Keys = ['name', 'company', 'email', 'phone', 'website', 'description', 'budget', 'timeline'] as const;
+
+    let keys: readonly string[];
 
     if (stepNum === 1) {
-      schemaShape = { inquiryType: contactSchema.shape.inquiryType };
+      keys = step1Keys;
     } else if (stepNum === 2) {
-      schemaShape = {
-        name: contactSchema.shape.name,
-        company: contactSchema.shape.company,
-        email: contactSchema.shape.email,
-        phone: contactSchema.shape.phone,
-        website: contactSchema.shape.website,
-        description: contactSchema.shape.description,
-        budget: contactSchema.shape.budget,
-        timeline: contactSchema.shape.timeline,
-      };
+      keys = step2Keys;
     } else {
       return true;
     }
 
-    const partialSchema = contactSchema.pick(
-      Object.keys(schemaShape) as any as [keyof ContactFormData]
-    );
+    const partialSchema = contactSchema.pick(keys);
     const result = partialSchema.safeParse(formData);
 
     if (!result.success) {
@@ -107,7 +100,7 @@ export function ContactForm() {
     setSubmitError(null);
 
     try {
-      const submissionData = { ...formData, _gotcha: '' };
+      const submissionData = { ...formData };
       const result = contactSchema.safeParse(submissionData);
 
       if (!result.success) {
@@ -218,20 +211,6 @@ export function ContactForm() {
             {errors.inquiryType && (
               <p className="text-sm text-destructive">{errors.inquiryType}</p>
             )}
-
-            {/* Honeypot - invisible to users */}
-            <div className="absolute opacity-0 pointer-events-none" aria-hidden="true">
-              <label htmlFor="_gotcha">Leave this empty</label>
-              <input
-                id="_gotcha"
-                name="_gotcha"
-                type="text"
-                tabIndex={-1}
-                autoComplete="off"
-                value=""
-                readOnly
-              />
-            </div>
 
             <div className="flex justify-end pt-4">
               <button
@@ -458,6 +437,20 @@ export function ContactForm() {
           </motion.div>
         )}
       </AnimatePresence>
+
+      {/* Honeypot - invisible to users, persists across all steps */}
+      <div className="absolute opacity-0 pointer-events-none" aria-hidden="true">
+        <label htmlFor="_gotcha">Leave this empty</label>
+        <input
+          id="_gotcha"
+          name="_gotcha"
+          type="text"
+          tabIndex={-1}
+          autoComplete="off"
+          value={formData._gotcha}
+          onChange={(e) => updateField('_gotcha', e.target.value)}
+        />
+      </div>
     </div>
   );
 }

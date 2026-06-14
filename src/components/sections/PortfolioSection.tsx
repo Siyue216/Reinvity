@@ -81,7 +81,7 @@ export function PortfolioSection() {
               Selected Work
             </h2>
             <p className="text-lg text-muted-foreground">
-              A glimpse into the digital products and platforms we've built for ambitious companies worldwide.
+              A glimpse into the digital products and platforms we&apos;ve built for ambitious companies worldwide.
             </p>
           </div>
           

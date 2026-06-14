@@ -66,7 +66,7 @@ export function FaqSection() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.4, delay: idx * 0.05 }}
-                className={`border rounded-2xl overflow-hidden transition-colors duration-300 ${
+                className={`group border rounded-2xl overflow-hidden transition-colors duration-300 ${
                   isOpen ? 'bg-surface border-primary/30' : 'bg-background border-border hover:border-foreground/30'
                 }`}
               >

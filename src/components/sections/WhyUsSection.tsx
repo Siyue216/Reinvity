@@ -47,7 +47,7 @@ export function WhyUsSection() {
             Why Choose Reinvity
           </h2>
           <p className="text-lg text-muted-foreground">
-            We don't just write code. We partner with you to solve complex business challenges through technology.
+            We don&apos;t just write code. We partner with you to solve complex business challenges through technology.
           </p>
         </div>
 
