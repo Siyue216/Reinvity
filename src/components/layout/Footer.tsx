@@ -22,14 +22,9 @@ export function Footer() {
           
           {/* Column 1: Brand & Social */}
           <div className="space-y-6">
-            <Link href="/" className="flex items-center gap-2">
-              {/* Placeholder for Logo */}
-              <div className="w-8 h-8 rounded bg-primary/20 flex items-center justify-center border border-primary/30">
-                <span className="text-xs font-bold text-primary">R</span>
-              </div>
-              <span className="text-2xl font-bold tracking-tight text-foreground">
-                Reinvity
-              </span>
+            <Link href="/" className="flex items-center">
+              <img src="/primary-logo-light.png" alt="Reinvity" className="h-10 w-auto dark:hidden" />
+              <img src="/primary-logo-dark.png" alt="Reinvity" className="h-10 w-auto hidden dark:block" />
             </Link>
             <p className="text-muted-foreground text-sm leading-relaxed max-w-xs">
               Empowering ambitious businesses to build faster, scale smarter, and win bigger through expert software engineering and AI solutions.
@@ -71,7 +66,6 @@ export function Footer() {
             <ul className="space-y-4">
               <li><Link href="/about" className="text-sm text-muted-foreground hover:text-primary transition-colors">About Us</Link></li>
               <li><Link href="/portfolio" className="text-sm text-muted-foreground hover:text-primary transition-colors">Portfolio</Link></li>
-              <li><Link href="/case-studies" className="text-sm text-muted-foreground hover:text-primary transition-colors">Case Studies</Link></li>
               <li><Link href="/blog" className="text-sm text-muted-foreground hover:text-primary transition-colors">Blog & Insights</Link></li>
               <li><Link href="/careers" className="text-sm text-muted-foreground hover:text-primary transition-colors">Careers</Link></li>
             </ul>
@@ -83,15 +77,15 @@ export function Footer() {
               <h3 className="font-semibold text-foreground mb-6">Get in Touch</h3>
               <ul className="space-y-4">
                 <li>
-                  <a href="mailto:hello@reinvity.com" className="flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors">
+                  <a href="mailto:ayeshkant.reinvity@gmail.com" className="flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors">
                     <Mail className="w-4 h-4" />
-                    hello@reinvity.com
+                    ayeshkant.reinvity@gmail.com
                   </a>
                 </li>
                 <li>
-                  <a href="tel:+910000000000" className="flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors">
+                  <a href="tel:+919623318714" className="flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors">
                     <Phone className="w-4 h-4" />
-                    +91 (000) 000-0000
+                    +91 96233 18714
                   </a>
                 </li>
               </ul>

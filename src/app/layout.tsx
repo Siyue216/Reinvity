@@ -18,6 +18,9 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Reinvity | Digital Transformation Partner",
   description: "We build digital products that scale.",
+  icons: {
+    icon: '/favicon.png',
+  },
 };
 
 export default function RootLayout({

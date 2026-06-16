@@ -30,7 +30,7 @@ export function MobileMenu() {
     { name: 'Home', href: '/' },
     { name: 'Services', href: '/services' },
     { name: 'Portfolio', href: '/portfolio' },
-    { name: 'Case Studies', href: '/case-studies' },
+
     { name: 'Blog', href: '/blog' },
     { name: 'About', href: '/about' },
   ];
@@ -110,13 +110,13 @@ export function MobileMenu() {
                 </div>
 
                 <div className="pt-6 border-t border-border space-y-3 text-sm text-muted-foreground">
-                  <a href="mailto:hello@reinvity.com" className="flex items-center gap-2 hover:text-foreground transition-colors">
+                  <a href="mailto:ayeshkant.reinvity@gmail.com" className="flex items-center gap-2 hover:text-foreground transition-colors">
                     <Mail className="w-4 h-4" />
-                    hello@reinvity.com
+                    ayeshkant.reinvity@gmail.com
                   </a>
-                  <a href="tel:+910000000000" className="flex items-center gap-2 hover:text-foreground transition-colors">
+                  <a href="tel:+919623318714" className="flex items-center gap-2 hover:text-foreground transition-colors">
                     <Phone className="w-4 h-4" />
-                    +91 (000) 000-0000
+                    +91 96233 18714
                   </a>
                 </div>
               </div>

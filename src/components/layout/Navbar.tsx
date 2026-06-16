@@ -35,14 +35,9 @@ export function Navbar() {
           
           {/* Logo Area */}
           <div className="flex-shrink-0 flex items-center">
-            <Link href="/" className="flex items-center gap-2">
-              {/* Placeholder space for the 6 PNG variations (logo, name, logo+name in black & white) */}
-              <div className="w-8 h-8 rounded bg-primary/20 flex items-center justify-center border border-primary/30">
-                <span className="text-xs font-bold text-primary">R</span>
-              </div>
-              <span className="text-2xl font-bold tracking-tight text-foreground">
-                Reinvity
-              </span>
+            <Link href="/" className="flex items-center">
+              <img src="/primary-logo-light.png" alt="Reinvity" className="h-10 w-auto dark:hidden" />
+              <img src="/primary-logo-dark.png" alt="Reinvity" className="h-10 w-auto hidden dark:block" />
             </Link>
           </div>
 
@@ -51,9 +46,6 @@ export function Navbar() {
             <MegaMenu />
             <Link href="/portfolio" className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors px-4 py-2">
               Portfolio
-            </Link>
-            <Link href="/case-studies" className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors px-4 py-2">
-              Case Studies
             </Link>
             <Link href="/blog" className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors px-4 py-2">
               Blog
