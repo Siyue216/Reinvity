@@ -6,7 +6,6 @@ import { ProcessSection } from '@/components/sections/ProcessSection';
 import { PortfolioSection } from '@/components/sections/PortfolioSection';
 import { TestimonialSection } from '@/components/sections/TestimonialSection';
 import { FaqSection } from '@/components/sections/FaqSection';
-import { CtaSection } from '@/components/sections/CtaSection';
 
 export default function Home() {
   return (
@@ -19,7 +18,6 @@ export default function Home() {
       <PortfolioSection />
       <TestimonialSection />
       <FaqSection />
-      <CtaSection />
     </main>
   );
 }

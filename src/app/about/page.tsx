@@ -1,7 +1,6 @@
 import type { Metadata } from 'next';
-import Link from 'next/link';
 import { AboutStats } from './AboutStats';
-import { ArrowRight, Calendar, Target, Eye, Heart, Code2, Lightbulb, Users, Sparkles } from 'lucide-react';
+import { Target, Eye, Heart, Code2, Lightbulb, Users, Sparkles } from 'lucide-react';
 
 export const metadata: Metadata = {
   title: 'About Us | Reinvity',
@@ -170,39 +169,6 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* CTA */}
-      <section className="relative py-24 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-primary/90 via-primary to-blue-900 dark:from-[#070B14] dark:via-[#0c1a38] dark:to-[#070B14]" />
-        <div className="absolute w-96 h-96 bg-blue-400/30 rounded-full blur-[100px] mix-blend-screen -top-48 -left-48 pointer-events-none" />
-        <div className="absolute w-[500px] h-[500px] bg-primary/20 rounded-full blur-[120px] -bottom-48 -right-48 pointer-events-none" />
-        <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20 mix-blend-overlay pointer-events-none" />
-        <div className="max-w-3xl mx-auto px-4 text-center relative space-y-8">
-          <h2 className="text-3xl md:text-5xl font-bold tracking-tight text-white">
-            Want to Build the{' '}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-200 to-white">Next Big Thing?</span>
-          </h2>
-          <p className="text-lg text-blue-200 max-w-xl mx-auto">
-            Let&apos;s talk. No pitch, just a conversation about your vision and how we can help bring it to life.
-          </p>
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <Link
-              href="/contact"
-              className="inline-flex items-center gap-2 rounded-lg bg-white px-8 py-3.5 text-sm font-semibold text-primary hover:bg-blue-50 transition-colors shadow-lg"
-            >
-              Start a Project <ArrowRight className="w-4 h-4" />
-            </Link>
-            <a
-              href="https://calendly.com/reinvity/discovery-call"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 rounded-lg border-2 border-white/30 bg-transparent px-8 py-3.5 text-sm font-semibold text-white hover:bg-white/10 backdrop-blur-sm transition-colors"
-            >
-              <Calendar className="w-4 h-4" />
-              Book a Free Call
-            </a>
-          </div>
-        </div>
-      </section>
 
     </main>
   );
